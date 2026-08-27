@@ -21,7 +21,7 @@ I enjoy exploring how technology can be used to solve practical problems — fro
 
 ## 🧰 Technologies & Tools
 
-### Languages
+### Languages 
 
 `C++` · `Python` · `JavaScript` · `SQL`
 
@@ -36,30 +36,6 @@ I enjoy exploring how technology can be used to solve practical problems — fro
 ### Tools
 
 `Git` · `GitHub` · `VS Code`
-
----
-
-## 🚀 Featured Projects
-
-### 📈 Stock Intelligence
-
-**AI-powered financial intelligence & sentiment analysis**
-
-A data-driven pipeline that combines social-media sentiment analysis, financial data, machine learning, and AI-generated insights into an interactive dashboard.
-
-**Python · Pandas · NumPy · Scikit-learn · XGBoost · NLP · Streamlit · Plotly**
-
----
-
-### 🌐 rjnotop.gg
-
-A web-based project built as a practical exploration of modern web development and application building.
-
----
-
-### 📊 Marketing Maestros
-
-A project focused on applying technology to a practical marketing-oriented problem.
 
 ---
 
