@@ -80,3 +80,4 @@ I'm interested in **understanding how things work, building practical solutions,
 ## 🔗 Connect
 
 [![GitHub](https://img.shields.io/badge/GitHub-ANIRUDH--Main-181717?style=for-the-badge\&logo=github)](https://github.com/ANIRUDH-Main)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Anirudh%20Chaurasia-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anirudh-chaurasia/)
