@@ -1,6 +1,6 @@
 # Hi, I'm Anirudh 👋
 
-### Computer Applications Student · Technology Enthusiast
+### Master's of Computer Applications Student · Technology Enthusiast
 
 I'm a Computer Applications student interested in **software, data, and emerging technologies**.
 
