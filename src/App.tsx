@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { HeroSection } from './components/sections/HeroSection';
 import { MarqueeSection } from './components/sections/MarqueeSection';
 import { AboutSection } from './components/sections/AboutSection';
@@ -54,6 +55,9 @@ export function App() {
 
       {/* Interactive Contact Modal */}
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
