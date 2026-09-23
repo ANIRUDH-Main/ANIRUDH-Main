@@ -12,7 +12,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ onContac
   return (
     <section
       id="credentials"
-      className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-28 text-[#D7E2EA] border-t border-white/10 relative"
+      className="bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-28 text-[#D7E2EA] border-t border-white/10 relative z-20"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}

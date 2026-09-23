@@ -26,8 +26,10 @@ section[id] {
 
 /* Custom Hero Heading Gradient */
 .hero-heading {
+  color: #BBCCD7;
   background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

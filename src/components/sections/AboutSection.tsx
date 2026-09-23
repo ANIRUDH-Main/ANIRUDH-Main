@@ -9,7 +9,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onContactClick }) => {
   const aboutBio =
-    "MCA candidate and Full-Stack & Generative AI engineer with 4 deployed production projects and 4 certifications across AWS, Google Cloud, and IBM. From architecting live commercial platforms on Supabase to deploying containerized Gemini GenAI apps on Cloud Run and organizing DevFest with the GDG New Delhi core team, I craft reliable software that solves real-world challenges. Let's build something incredible together!";
+    "MCA candidate with 4 deployed projects including a live commercial full-stack platform and 4 certifications across AWS, Google Cloud, and IBM in Generative AI and Prompt Engineering. From architecting real-time platforms on Supabase to building an AI-powered stock sentiment dashboard and organizing DevFest with the GDG New Delhi core team, I engineer scalable software that solves real-world challenges. Let's build something incredible together!";
 
   return (
     <section

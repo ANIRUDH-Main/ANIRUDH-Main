@@ -1,9 +1,15 @@
 import rjMe from '../assets/rj_me.gif';
 import rjSetup from '../assets/rj_setup.jpg';
 import rjShowcase from '../assets/rj_portfolio_showcase.png';
-import thcLogo from '../assets/thc_logo.jpg';
-import thcFloral from '../assets/thc_floral.jpg';
+import thcLanding from '../assets/thc_landing.png';
+import thcOpsPanel from '../assets/thc_ops_panel.png';
 import thcScreenshot from '../assets/thc_live_screenshot.png';
+import smartParkingOverview from '../assets/smart_parking_overview.jpg';
+import smartParkingLcd from '../assets/smart_parking_lcd.jpg';
+import smartParkingAward from '../assets/smart_parking_award.png';
+import mmLightHero from '../assets/mm_light_hero.png';
+import mmDarkHero from '../assets/mm_dark_hero.png';
+import mmExperience from '../assets/mm_experience.png';
 
 export interface ProjectItem {
   id: string;
@@ -15,7 +21,8 @@ export interface ProjectItem {
   stack: string[];
   liveUrl?: string;
   githubUrl?: string;
-  images: {
+  bullets?: string[];
+  images?: {
     col1Top: string;
     col1Bottom: string;
     col2: string;
@@ -203,55 +210,70 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: 'thc-platform',
     number: '01',
-    name: 'THC Operations & Booking',
-    category: 'Client / Production',
-    description: 'Live commercial booking and operations platform for TRAPHOUSE CLUB featuring algorithmic tiered pricing, passwordless staff portal, and automated WhatsApp CRM dispatch.',
-    metrics: ['Real-Time Fast Pass', 'Supabase PostgreSQL RLS', 'Automated WhatsApp CRM', 'React 19 + TypeScript'],
+    name: 'THC Booking & Operations Platform',
+    category: 'Freelance · Client Production',
+    description: 'Live client booking and operations platform on Supabase featuring PostgreSQL schemas with Row Level Security (RLS), real-time Fast Pass reservations with algorithmic tiered pricing (3 PC / 3 PS5 tiers), passwordless staff operations portal, and automated WhatsApp CRM dispatch.',
+    metrics: ['Real-Time Fast Pass', 'Supabase PostgreSQL RLS', 'Passwordless Staff Portal', 'WhatsApp CRM Dispatch'],
     stack: ['React 19', 'TypeScript', 'Tailwind CSS', 'Radix UI', 'Supabase', 'Vite'],
     liveUrl: 'https://traphouseclub.vercel.app',
     images: {
-      col1Top: thcLogo,
-      col1Bottom: thcFloral,
-      col2: thcScreenshot,
+      col1Top: thcOpsPanel,
+      col1Bottom: thcScreenshot,
+      col2: thcLanding,
     },
   },
   {
-    id: 'smart-parking',
+    id: 'stock-intelligence',
     number: '02',
-    name: 'Real-Time Smart Parking IoT',
+    name: 'Stock Intelligence & Social Sentiment Dashboard',
+    category: 'Group Project · Aug 2026',
+    description: 'Interactive Streamlit dashboard for a 5-stage AI stock-analysis pipeline, rendering sentiment gauges, ML price predictions, and AI-generated analyst narratives across 20 financial subreddits.',
+    metrics: ['5-Stage AI Pipeline', '20 Financial Subreddits', '5-Model ML Ensemble', 'Instant JSON Cache Launch'],
+    stack: ['Streamlit', 'Plotly', 'Python', 'XGBoost', 'scikit-learn', 'spaCy', 'VADER', 'CrewAI + Ollama'],
+    githubUrl: 'https://github.com/ANIRUDH-Main/Stock-Intelligence',
+    bullets: [
+      'Built the interactive Streamlit dashboard for a 5-stage AI stock-analysis pipeline, rendering sentiment gauges, ML price predictions, and AI-generated analyst narratives for tickers detected across 20 financial subreddits.',
+      "Owned the presentation layer of the pipeline — consuming pre-generated outputs from the team's Reddit scraper, VADER/spaCy sentiment and ticker-detection stage, and 5-model ML prediction stage (XGBoost, Random Forest, Gradient Boosting, Ridge, SVR) — and rendering them into a clear, interactive Plotly-based interface.",
+      'Designed the dashboard to run independently of the upstream pipeline, reading from pre-generated JSON so it launches instantly without re-running scraping or model training.',
+    ],
+  },
+  {
+    id: 'smart-parking',
+    number: '03',
+    name: 'Real-Time Smart Parking System',
     category: 'Award-Winning IoT / 2nd Place',
-    description: 'Awarded 2nd Place at TechFusion 2025 for an Arduino-based smart parking system with multi-sensor telemetry, servo motor automation, and <50ms classification latency.',
+    description: 'Awarded 2nd Place at TechFusion for an Arduino-based occupancy detection system using 4 ultrasonic sensors, processing real-time distance data to classify parking slot states with <50ms detection latency and embedded C sensor fusion logic.',
     metrics: ['🏆 2nd Place TechFusion', '<50ms Latency', 'Multi-Node Sensor Fusion', 'Cash Prize Winner'],
-    stack: ['Arduino', 'Ultrasonic Sensors', 'Embedded C', 'IoT', 'Real-Time Data'],
+    stack: ['Arduino', 'Ultrasonic Sensors', 'Embedded C', 'IoT', 'Real-Time Data Processing'],
     liveUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7347155248789999616/',
     images: {
-      col1Top: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
-      col1Bottom: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85',
-      col2: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
+      col1Top: smartParkingOverview,
+      col1Bottom: smartParkingLcd,
+      col2: smartParkingAward,
     },
   },
   {
     id: 'marketing-maestros',
-    number: '03',
-    name: 'Marketing Maestros Platform',
-    category: 'Club Platform / Production',
-    description: 'Dual-themed (light/dark) responsive website serving 100+ society members with dynamic member profiles, testimonials, and social media integration with sub-2s page load.',
+    number: '04',
+    name: 'College Society Website',
+    category: 'Marketing Maestros Club, IINTM',
+    description: 'Built and deployed a dual-themed (light/dark) responsive website serving 100+ society members, featuring dynamic member profiles, testimonials, and social media integration with sub-2s page load using vanilla JS optimization and zero-downtime CI/CD via Vercel.',
     metrics: ['Sub-2s Page Load', 'Dual-Themed (Light/Dark)', '100+ Society Members', 'Zero-Downtime CI/CD'],
     stack: ['HTML', 'CSS', 'JavaScript', 'Vercel CI/CD'],
     liveUrl: 'https://marketing-maestros.vercel.app',
     images: {
-      col1Top: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
-      col1Bottom: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85',
-      col2: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85',
+      col1Top: mmLightHero,
+      col1Bottom: mmExperience,
+      col2: mmDarkHero,
     },
   },
   {
     id: 'client-portfolio',
-    number: '04',
+    number: '05',
     name: 'Client Portfolio Website',
-    category: 'Freelance / Client Production',
-    description: 'Designed and shipped a production-ready responsive portfolio site for a content creator client — featuring game configurations, battle-station setup specs, and social stream integrations, live on Vercel.',
-    metrics: ['Live & Publicly Deployed', 'Content Creator Portfolio', 'Responsive Multi-Section UI', 'Zero-Downtime Vercel CI/CD'],
+    category: 'Freelance Production',
+    description: 'Designed and shipped a production-ready responsive portfolio site for a client — live, deployed, and publicly accessible on Vercel with responsive multi-section UI and performance optimization.',
+    metrics: ['Live & Publicly Deployed', 'Client Portfolio', 'Responsive Multi-Section UI', 'Zero-Downtime Vercel CI/CD'],
     stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Vercel CI/CD'],
     liveUrl: 'https://rjnotop-gg.vercel.app',
     images: {
@@ -268,23 +290,23 @@ export const CERTIFICATIONS = [
     issuer: 'IBM SkillsBuild',
     date: 'Jun 2026',
     badge: 'IBM SkillsBuild',
-    description: 'Foundational generative AI concepts, AI ethics, risk identification via IBM Risk Atlas, and practical application of IBM Granite models.',
+    description: 'Built understanding of foundational generative AI concepts, AI ethics, and risk identification via the IBM Risk Atlas; applied large language models in practical scenarios such as customer service and content creation, with a focus on guiding IBM Granite models effectively.',
     credlyUrl: 'https://www.credly.com/badges/62bfe1a2-4f41-4936-ba5c-c7f646a44097',
   },
   {
     title: 'Develop GenAI Apps with Gemini and Streamlit',
-    issuer: 'Google Cloud',
+    issuer: 'Google Cloud Skill Badge',
     date: 'May 2024',
-    badge: 'Google Cloud',
-    description: 'GenAI application development using Gemini API and Python SDK for text generation and function calling, packaged with Docker on Cloud Run.',
+    badge: 'Google Cloud Skill Badge',
+    description: 'Built and deployed a GenAI application using the Gemini API and Python SDK for text generation and function calling, packaged as a Docker container and deployed on Cloud Run.',
     credlyUrl: 'https://www.credly.com/badges/5f52a8c7-3b57-496e-8f61-99ef9df5d570',
   },
   {
     title: 'Prompt Design in Vertex AI',
-    issuer: 'Google Cloud',
+    issuer: 'Google Cloud Skill Badge',
     date: 'May 2024',
-    badge: 'Google Cloud',
-    description: 'Prompt engineering, image analysis, and multimodal generative techniques within Vertex AI, crafting prompts to guide Gemini models.',
+    badge: 'Google Cloud Skill Badge',
+    description: 'Applied prompt engineering, image analysis, and multimodal generative techniques within Vertex AI, crafting effective prompts to guide Gemini model output for real-world scenarios.',
     credlyUrl: 'https://www.credly.com/badges/ee3ba7b4-a098-4814-961e-3c0a2d465c9c',
   },
   {
@@ -292,7 +314,7 @@ export const CERTIFICATIONS = [
     issuer: 'AWS Training & Certification',
     date: 'May 2024',
     badge: 'AWS Certified',
-    description: 'Few-shot learning, chain-of-thought, instruction tuning, and role prompting for interacting with Foundation Models.',
+    description: 'Studied and applied prompt engineering techniques — few-shot learning, chain-of-thought, instruction tuning, and role prompting — for interacting with Foundation Models.',
   },
 ];
 
@@ -300,14 +322,14 @@ export const EDUCATION = [
   {
     degree: 'Master of Computer Applications (MCA)',
     institution: 'Vivekananda Institute of Professional Studies (VIPS), GGSIPU',
-    timeline: '2025 - 2027',
+    timeline: '2025 - 2027 · Expected: 2027',
     coursework: 'Artificial Intelligence, Data Structures, Advanced DBMS, Computer Networks',
   },
   {
     degree: 'Bachelor of Computer Applications (BCA)',
     institution: 'Guru Gobind Singh Indraprastha University (GGSIPU)',
-    timeline: '2022 - 2025',
-    coursework: 'Web Technologies, Data Structures, DBMS, Object-Oriented Programming',
+    timeline: '2022 - 2025 · Graduated 2025',
+    coursework: 'Web Technologies, Data Structures, DBMS, Object-Oriented Programming (OOP)',
   },
 ];
 
@@ -316,12 +338,12 @@ export const LEADERSHIP = [
     role: 'Team Member (Core Team)',
     organization: 'Google Developer Groups (GDG), New Delhi',
     period: 'Sep 2026 - Present',
-    description: 'Coordinating logistics and planning for DevFest 2026 as part of the GDG New Delhi core team for the flagship annual developer event.',
+    description: "Currently organizing DevFest 2026 as part of the GDG New Delhi team, coordinating logistics and planning for the community's flagship annual developer event.",
   },
   {
     role: 'Event Planning Lead',
     organization: 'Marketing Maestros Club, IINTM',
     period: 'Feb 2024 - Jun 2025',
-    description: 'Led 5+ college events for 200+ attendees and managed cross-functional teams of 8-10 volunteers across logistics, marketing, and content.',
+    description: 'Planned and executed 5+ college events for 200+ attendees; led cross-functional teams of 8-10 volunteers across logistics, marketing, and content — strengthening communication and project management skills.',
   },
 ];

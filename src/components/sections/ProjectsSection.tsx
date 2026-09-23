@@ -7,10 +7,10 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 pt-20 sm:pt-24 md:pt-32 pb-32 px-4 sm:px-6 md:px-10"
+      className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 pt-20 sm:pt-24 md:pt-32 pb-60 sm:pb-72 md:pb-80 px-4 sm:px-6 md:px-10"
     >
       {/* Heading */}
-      <FadeIn delay={0} y={40} className="text-center mb-16 sm:mb-20 md:mb-28">
+      <FadeIn delay={0} y={40} className="text-center mb-16 sm:mb-20 md:mb-28 relative z-20">
         <h2 className="hero-heading font-kanit font-black uppercase leading-none tracking-tight text-[clamp(3rem,12vw,160px)]">
           Project
         </h2>
