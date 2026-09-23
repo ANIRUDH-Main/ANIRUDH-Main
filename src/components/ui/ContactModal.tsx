@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Mail, Phone, MapPin, Copy, Check, Linkedin, Github } from 'lucide-react';
+import { X, Mail, MapPin, Copy, Check, Linkedin, Github } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -76,26 +76,6 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   title="Copy email"
                 >
                   {copied === 'email' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                </button>
-              </div>
-
-              {/* Phone */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-[#BBCCD7]" />
-                  <div>
-                    <span className="text-xs text-[#D7E2EA]/50 block">Phone</span>
-                    <a href="tel:+918595450932" className="text-sm font-medium hover:underline text-[#D7E2EA]">
-                      +91 8595450932
-                    </a>
-                  </div>
-                </div>
-                <button
-                  onClick={() => copyToClipboard('+918595450932', 'phone')}
-                  className="p-2 rounded-xl hover:bg-white/10 text-xs transition-colors"
-                  title="Copy phone"
-                >
-                  {copied === 'phone' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
 

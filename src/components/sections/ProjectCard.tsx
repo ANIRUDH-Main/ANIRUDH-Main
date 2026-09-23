@@ -23,7 +23,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalC
   return (
     <div
       ref={containerRef}
-      className="h-[85vh] min-h-[780px] md:min-h-0 flex items-start md:items-center justify-center sticky top-24 md:top-32"
+      className="h-[85vh] min-h-[780px] md:min-h-0 flex items-start justify-center sticky top-24 md:top-32"
       style={{
         top: `calc(5rem + ${index * 28}px)`,
         zIndex: index + 1,
@@ -34,7 +34,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalC
           scale,
           transformOrigin: 'top center',
         }}
-        className="w-full max-w-6xl rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col justify-between shadow-[0_20px_60px_rgba(0,0,0,0.9)] transition-shadow duration-300"
+        className="w-full max-w-6xl rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 md:min-h-[680px] lg:min-h-[720px] flex flex-col justify-between shadow-[0_20px_60px_rgba(0,0,0,0.9)] transition-shadow duration-300"
       >
         {/* Top Row: Number, category label, project name, and Live Project button */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-6 gap-4 border-b border-[#D7E2EA]/15">
@@ -170,7 +170,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalC
           </div>
         ) : (
           /* Technical Deep Dive: Bullet Points & Pipeline Architecture (No image slots) */
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 pt-2">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 pt-2 flex-1 md:min-h-[460px] lg:min-h-[520px]">
             {/* Bullet Points Container (8 of 12 cols on desktop) */}
             <div className="lg:col-span-8 flex flex-col justify-between gap-2 sm:gap-3">
               {project.bullets?.map((bullet, idx) => (

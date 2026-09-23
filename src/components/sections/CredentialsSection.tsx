@@ -1,7 +1,7 @@
 import React from 'react';
 import { FadeIn } from '../ui/FadeIn';
 import { CERTIFICATIONS, EDUCATION, LEADERSHIP } from '../../data/portfolioData';
-import { Award, GraduationCap, Users, Github, Linkedin, Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { Award, GraduationCap, Users, Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
 import { ContactButton } from '../ui/ContactButton';
 
 interface CredentialsSectionProps {
@@ -187,13 +187,6 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ onContac
             >
               <Mail className="w-4 h-4" />
               <span>Email</span>
-            </a>
-            <a
-              href="tel:+918595450932"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span>+91 8595450932</span>
             </a>
           </div>
         </div>
