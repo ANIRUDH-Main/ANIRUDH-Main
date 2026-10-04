@@ -6,6 +6,7 @@ import avatarSerious from '../../assets/anirudh_avatar_serious.png';
 
 import { ArrowUpRight } from 'lucide-react';
 import StaggeredMenu, { StaggeredMenuItem, StaggeredMenuSocialItem } from '../ui/StaggeredMenu';
+import TechText from '../ui/TechText';
 
 interface HeroSectionProps {
   onContactClick?: () => void;
@@ -43,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
   };
 
   return (
-    <section className="relative h-screen flex flex-col justify-between overflow-x-clip bg-[#0C0C0C] select-none">
+    <section className="relative h-screen flex flex-col justify-between overflow-x-clip bg-[#0C0C0C] select-none pt-20 sm:pt-24 md:pt-0">
       {/* 1. Mobile StaggeredMenu (Active on Mobile Screens) */}
       <div className="md:hidden">
         <StaggeredMenu
@@ -104,21 +105,83 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
         </a>
       </motion.nav>
 
-      {/* 2. Hero Heading (Positioned above avatar on mobile, in-flow background layer on desktop) */}
-      <div className="w-full overflow-hidden flex items-center justify-center z-0 px-3 sm:px-6 md:px-8 absolute top-[27%] -translate-y-1/2 left-0 md:static md:top-auto md:left-auto md:translate-y-0">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-          className="hero-heading font-kanit font-black uppercase tracking-tight leading-none whitespace-nowrap text-center
-            text-[9vw] sm:text-[9.8vw] md:text-[10.6vw] lg:text-[11.4vw] mt-0 md:-mt-6 pointer-events-none select-none max-w-full"
-        >
-          Hi, i&apos;m anirudh
-        </motion.h1>
-      </div>
+      {/* 2. Hero Heading (Interactive TechText Animation - Responsive 2-Line on Mobile < md, 1-Line on Desktop md+) */}
+      {/* Mobile Heading (2 Lines on < md) */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        className="w-full z-0 flex md:hidden flex-col items-center justify-center px-2 sm:px-4 pointer-events-auto gap-0 sm:gap-1"
+      >
+        <h1 className="sr-only">Hi, I&apos;m Anirudh</h1>
+        {/* Line 1: HI, I'M in Geist Mono Monospace */}
+        <div className="w-full h-[48px] sm:h-[64px] flex items-center justify-center">
+          <TechText
+            text="HI, I'M"
+            fontFamily="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+            fontWeight={500}
+            fontSize={140}
+            reveal="letter"
+            dashLength={4}
+            dashGap={2}
+            specks={12}
+            speed={2.2}
+            color="#D7E2EA"
+            accentColor="#BBCCD7"
+            widthFit={0.78}
+            heightFit={0.88}
+          />
+        </div>
+        {/* Line 2: ANIRUDH in Playfair Display Serif */}
+        <div className="w-full h-[66px] sm:h-[88px] flex items-center justify-center">
+          <TechText
+            text="ANIRUDH"
+            fontFamily="'Playfair Display', Georgia, serif"
+            fontWeight={800}
+            fontSize={180}
+            reveal="letter"
+            dashLength={4}
+            dashGap={2}
+            specks={15}
+            speed={2.4}
+            color="#D7E2EA"
+            accentColor="#BBCCD7"
+            widthFit={0.92}
+            heightFit={0.88}
+          />
+        </div>
+      </motion.div>
+
+      {/* Desktop Heading (1 Line on md+) */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        className="hidden md:flex w-full z-0 items-center justify-center px-1 sm:px-2 md:px-4 h-[210px] lg:h-[260px] xl:h-[290px] md:mt-2 lg:mt-4 pointer-events-auto"
+      >
+        <h1 className="sr-only">Hi, I&apos;m Anirudh</h1>
+        <TechText
+          text="HI, I'M ANIRUDH"
+          fontFamily="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+          fontWeight={500}
+          secondaryFontFamily="'Playfair Display', Georgia, serif"
+          secondaryFontWeight={800}
+          secondaryPattern="ANIRUDH"
+          fontSize={220}
+          reveal="letter"
+          dashLength={4}
+          dashGap={2}
+          specks={15}
+          speed={2.3}
+          color="#D7E2EA"
+          accentColor="#BBCCD7"
+          widthFit={0.96}
+          heightFit={0.85}
+        />
+      </motion.div>
 
       {/* 3. Hero Portrait: Transparent Lassoed Cutout with Magnet Effect */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-auto top-[52%] -translate-y-1/2 md:top-auto md:translate-y-0 md:bottom-0">
+      <div className="flex-1 flex items-center justify-center z-10 pointer-events-auto my-auto md:my-0 md:absolute md:left-1/2 md:-translate-x-1/2 md:bottom-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -130,11 +193,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onContactClick }) => {
             activeTransition="transform 0.3s ease-out"
             inactiveTransition="transform 0.6s ease-in-out"
           >
-            <div className="w-[250px] sm:w-[300px] md:w-[360px] lg:w-[410px] flex items-end justify-center pointer-events-none">
+            <div className="w-[200px] sm:w-[240px] md:w-[300px] lg:w-[340px] xl:w-[380px] max-h-[38vh] sm:max-h-[42vh] md:max-h-[46vh] lg:max-h-[50vh] flex items-center md:items-end justify-center pointer-events-none">
               <img
                 src={avatarSerious}
                 alt="Anirudh Chaurasia - 3D Serious Avatar"
-                className="w-full h-auto object-contain select-none pointer-events-none filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)]"
+                className="w-full max-h-[38vh] sm:max-h-[42vh] md:max-h-[46vh] lg:max-h-[50vh] h-auto object-contain select-none pointer-events-none filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)]"
                 draggable={false}
               />
             </div>
