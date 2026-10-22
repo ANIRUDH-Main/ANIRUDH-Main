@@ -56,15 +56,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalC
                     <span>Live Commercial Client</span>
                   </span>
                 )}
-                {project.id === 'client-portfolio' && (
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[11px] font-mono uppercase tracking-wider">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-                    </span>
-                    <span>Live Client Project</span>
-                  </span>
-                )}
                 {project.id === 'smart-parking' && (
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[11px] font-mono uppercase tracking-wider">
                     <span>🏆</span>
@@ -93,8 +84,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalC
               label={
                 project.id === 'thc-platform'
                   ? 'Live Platform'
-                  : project.id === 'client-portfolio'
-                  ? 'Live Portfolio'
                   : project.id === 'smart-parking'
                   ? 'LinkedIn Post'
                   : project.id === 'stock-intelligence'

@@ -1,6 +1,3 @@
-import rjMe from '../assets/rj_me.gif';
-import rjSetup from '../assets/rj_setup.jpg';
-import rjShowcase from '../assets/rj_portfolio_showcase.png';
 import thcLanding from '../assets/thc_landing.png';
 import thcOpsPanel from '../assets/thc_ops_panel.png';
 import thcScreenshot from '../assets/thc_live_screenshot.png';
@@ -265,21 +262,6 @@ export const PROJECTS_DATA: ProjectItem[] = [
       col1Top: mmLightHero,
       col1Bottom: mmExperience,
       col2: mmDarkHero,
-    },
-  },
-  {
-    id: 'client-portfolio',
-    number: '05',
-    name: 'Client Portfolio Website',
-    category: 'Freelance Production',
-    description: 'Designed and shipped a production-ready responsive portfolio site for a client — live, deployed, and publicly accessible on Vercel with responsive multi-section UI and performance optimization.',
-    metrics: ['Live & Publicly Deployed', 'Client Portfolio', 'Responsive Multi-Section UI', 'Zero-Downtime Vercel CI/CD'],
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Vercel CI/CD'],
-    liveUrl: 'https://rjnotop-gg.vercel.app',
-    images: {
-      col1Top: rjMe,
-      col1Bottom: rjSetup,
-      col2: rjShowcase,
     },
   },
 ];
