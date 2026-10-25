@@ -23,7 +23,7 @@ export function App() {
       {/* Interactive Wavy TextLoop Ribbon */}
       <div className="py-0 -my-2 sm:-my-6 bg-[#0C0C0C] relative z-10 overflow-hidden">
         <TextLoop
-          text="ANIRUDH CHAURASIA ✦ OPEN TO WORK ✦ LET'S BUILD "
+          text="ANIRUDH CHAURASIA ✦ OPEN TO WORK ✦ LET'S BUILD"
           shape="wave"
           speed={150}
           direction="reverse"
