@@ -7,6 +7,7 @@ import { ServicesSection } from './components/sections/ServicesSection';
 import { ProjectsSection } from './components/sections/ProjectsSection';
 import { CredentialsSection } from './components/sections/CredentialsSection';
 import { ContactModal } from './components/ui/ContactModal';
+import { ScrollToTopButton } from './components/ui/ScrollToTopButton';
 import TextLoop from './components/ui/TextLoop';
 
 export function App() {
@@ -55,7 +56,10 @@ export function App() {
 
       {/* Interactive Contact Modal */}
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
-      
+
+      {/* Floating Scroll-To-Top Button */}
+      <ScrollToTopButton />
+
       {/* Vercel Web Analytics */}
       <Analytics />
     </div>
